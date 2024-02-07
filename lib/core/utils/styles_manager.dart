@@ -15,7 +15,18 @@ abstract class StylesManager {
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w500,
             );
-
+  static TextStyle styleExtraLight18(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 18),
+              fontWeight: FontWeight.w200,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 18),
+              fontWeight: FontWeight.w200,
+            );
   static TextStyle styleExtraLight30(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
           ? GoogleFonts.poppins(
@@ -27,6 +38,54 @@ abstract class StylesManager {
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 30),
               fontWeight: FontWeight.w200,
+            );
+  static TextStyle styleExtraLight60(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 60),
+              fontWeight: FontWeight.w200,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 60),
+              fontWeight: FontWeight.w200,
+            );
+  static TextStyle styleLight20(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 20),
+              fontWeight: FontWeight.w300,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 20),
+              fontWeight: FontWeight.w300,
+            );
+  static TextStyle styleMedium25(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 25),
+              fontWeight: FontWeight.w500,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 25),
+              fontWeight: FontWeight.w500,
+            );
+  static TextStyle styleSemiBold25(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 25),
+              fontWeight: FontWeight.w600,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 25),
+              fontWeight: FontWeight.w600,
             );
   static TextStyle styleBold100(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark

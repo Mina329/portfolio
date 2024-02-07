@@ -12,22 +12,23 @@ class DesktopNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const SizedBox(
-          width: 20,
-        ),
         Text(
           'Mina',
           style: StylesManager.styleDancingScript(context),
         ),
-        const Spacer(),
-        DesktopNavigationBarItem(title: 'HOME', onPressed: () {}),
-        DesktopNavigationBarItem(title: 'ABOUT', onPressed: () {}),
-        DesktopNavigationBarItem(title: 'SERVICES', onPressed: () {}),
-        DesktopNavigationBarItem(title: 'PROJECTS', onPressed: () {}),
-        DesktopNavigationBarItem(title: 'CONTACT', onPressed: () {}),
-        const MyResumeDesktopButton(),
-        const ThemeSwitch()
+        Row(
+          children: [
+            DesktopNavigationBarItem(title: 'HOME', onPressed: () {}),
+            DesktopNavigationBarItem(title: 'ABOUT', onPressed: () {}),
+            DesktopNavigationBarItem(title: 'SERVICES', onPressed: () {}),
+            DesktopNavigationBarItem(title: 'PROJECTS', onPressed: () {}),
+            DesktopNavigationBarItem(title: 'CONTACT', onPressed: () {}),
+            const MyResumeDesktopButton(),
+            const ThemeSwitch(),
+          ],
+        )
       ],
     );
   }
