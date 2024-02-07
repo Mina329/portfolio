@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/core/utils/size_config.dart';
 
 abstract class StylesManager {
-  static TextStyle styleRegular18(BuildContext context) =>
+  static TextStyle styleMedium18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
           ? GoogleFonts.poppins(
               color: Colors.white,
@@ -14,6 +14,31 @@ abstract class StylesManager {
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w500,
+            );
+
+  static TextStyle styleExtraLight30(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 30),
+              fontWeight: FontWeight.w200,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 30),
+              fontWeight: FontWeight.w200,
+            );
+  static TextStyle styleBold100(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 100),
+              fontWeight: FontWeight.w700,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 100),
+              fontWeight: FontWeight.w700,
             );
   static TextStyle styleSemiBold18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark

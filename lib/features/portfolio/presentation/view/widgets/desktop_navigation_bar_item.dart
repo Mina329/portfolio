@@ -21,7 +21,7 @@ class DesktopNavigationBarItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               title,
-              style: StylesManager.styleRegular18(context),
+              style: StylesManager.styleMedium18(context),
             ),
           ),
         ),
