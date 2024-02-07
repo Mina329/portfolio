@@ -12,52 +12,55 @@ class DesktopAboutSectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SectionTitleWidget(title: 'About Me'),
-        Text(
-          'Get to know me :)',
-          style: StylesManager.styleExtraLight18(context),
-        ),
-        const SizedBox(
-          height: 50,
-        ),
-        Row(
-          children: [
-            const Flexible(
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: Image(
-                  image: AssetImage(
-                    Assets.assetsImagesColored,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 50),
+      child: Column(
+        children: [
+          const SectionTitleWidget(title: 'About Me'),
+          Text(
+            'Get to know me :)',
+            style: StylesManager.styleExtraLight18(context),
+          ),
+          Row(
+            children: [
+              const Flexible(
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Image(
+                    image: AssetImage(
+                      Assets.assetsImagesColored,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Flexible(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    WhoAmIWidget(),
-                    Divider(
-                      height: 50,
-                      color: ColorsManager.greyColor,
-                    ),
-                    TechnologiesIWorkedWithWidget(),
-                    Divider(
-                      height: 50,
-                      color: ColorsManager.greyColor,
-                    ),
-                    PersonalInfoWidget()
-                  ],
+              Flexible(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 50,
+                      ),
+                      WhoAmIWidget(),
+                      Divider(
+                        height: 50,
+                        color: ColorsManager.greyColor,
+                      ),
+                      TechnologiesIWorkedWithWidget(),
+                      Divider(
+                        height: 50,
+                        color: ColorsManager.greyColor,
+                      ),
+                      PersonalInfoWidget()
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
-        )
-      ],
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }

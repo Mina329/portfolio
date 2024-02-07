@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/features/about/presentation/view/desktop_about_section_view.dart';
 import 'package:portfolio/features/home/presentation/view/desktop_home_section_view.dart';
 import 'package:portfolio/features/portfolio/presentation/view/widgets/desktop_navigation_bar.dart';
+import 'package:portfolio/features/services/presentation/view/desktop_services_section_view.dart';
 
 class PortfolioDesktopLayout extends StatelessWidget {
   const PortfolioDesktopLayout({super.key});
@@ -39,6 +40,14 @@ class PortfolioDesktopLayout extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 50),
                   child: DesktopAboutSectionView(),
                 ),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 50,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: DesktopServicesSectionView(),
               ),
             ],
           ),
