@@ -12,13 +12,19 @@ class TitleValueWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          title,
-          style: StylesManager.styleSemiBold18(context),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            title,
+            style: StylesManager.styleSemiBold18(context),
+          ),
         ),
-        Text(
-          value,
-          style: StylesManager.styleMedium18(context),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            value,
+            style: StylesManager.styleMedium18(context),
+          ),
         ),
       ],
     );

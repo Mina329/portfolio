@@ -13,7 +13,7 @@ class DesktopAboutSectionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: const EdgeInsets.only(right: 50),
       child: Column(
         children: [
           const SectionTitleWidget(title: 'About Me'),
@@ -21,9 +21,9 @@ class DesktopAboutSectionView extends StatelessWidget {
             'Get to know me :)',
             style: StylesManager.styleExtraLight18(context),
           ),
-          Row(
+          const Row(
             children: [
-              const Flexible(
+              Flexible(
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: Image(
@@ -34,27 +34,24 @@ class DesktopAboutSectionView extends StatelessWidget {
                 ),
               ),
               Flexible(
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 50,
-                      ),
-                      WhoAmIWidget(),
-                      Divider(
-                        height: 50,
-                        color: ColorsManager.greyColor,
-                      ),
-                      TechnologiesIWorkedWithWidget(),
-                      Divider(
-                        height: 50,
-                        color: ColorsManager.greyColor,
-                      ),
-                      PersonalInfoWidget()
-                    ],
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 50,
+                    ),
+                    WhoAmIWidget(),
+                    Divider(
+                      height: 50,
+                      color: ColorsManager.greyColor,
+                    ),
+                    TechnologiesIWorkedWithWidget(),
+                    Divider(
+                      height: 50,
+                      color: ColorsManager.greyColor,
+                    ),
+                    PersonalInfoWidget()
+                  ],
                 ),
               )
             ],
