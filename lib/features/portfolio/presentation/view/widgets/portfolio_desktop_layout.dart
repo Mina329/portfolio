@@ -8,14 +8,25 @@ import 'package:portfolio/features/services/presentation/view/desktop_services_s
 
 class PortfolioDesktopLayout extends StatelessWidget {
   const PortfolioDesktopLayout({super.key});
+  static GlobalKey homeSectionKey = GlobalKey();
+  static GlobalKey aboutSectionKey = GlobalKey();
+  static GlobalKey servicesSectionKey = GlobalKey();
+  static GlobalKey projectsSectionKey = GlobalKey();
+  static GlobalKey contactSectionKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: DesktopNavigationBar(),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: DesktopNavigationBar(
+            aboutKey: aboutSectionKey,
+            homeKey: homeSectionKey,
+            servicesKey: servicesSectionKey,
+            projectsKey: projectsSectionKey,
+            contactsKey: contactSectionKey,
+          ),
         ),
         Flexible(
           child: CustomScrollView(
@@ -33,48 +44,61 @@ class PortfolioDesktopLayout extends StatelessWidget {
               // ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 100),
-                  child: DesktopHomeSectionView(),
+                  padding: const EdgeInsets.only(left: 100),
+                  child: DesktopHomeSectionView(
+                    homeKey: homeSectionKey,
+                  ),
                 ),
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 50),
-                  child: DesktopAboutSectionView(),
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: DesktopAboutSectionView(
+                    aboutKey: aboutSectionKey,
+                  ),
                 ),
               ),
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: SizedBox(
                   height: 50,
                 ),
               ),
               SliverToBoxAdapter(
-                child: DesktopServicesSectionView(),
+                child: DesktopServicesSectionView(
+                  servicesKey: servicesSectionKey,
+                ),
               ),
               SliverToBoxAdapter(
-                child: DesktopProjectsSectionView(),
+                child: DesktopProjectsSectionView(
+                  projectsKey: projectsSectionKey,
+                ),
               ),
               SliverToBoxAdapter(
-                child: DesktopContactSectionView(),
+                child: DesktopContactSectionView(
+                  contactKey: contactSectionKey,
+                ),
               ),
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: SizedBox(
                   height: 50,
                 ),
               ),
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: Center(
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('Developed in 💙 with '),
-                      Text('Flutter',style: TextStyle(color: Colors.blue),),
+                      Text(
+                        'Flutter',
+                        style: TextStyle(color: Colors.blue),
+                      ),
                     ],
                   ),
                 ),
               ),
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: SizedBox(
                   height: 25,
                 ),

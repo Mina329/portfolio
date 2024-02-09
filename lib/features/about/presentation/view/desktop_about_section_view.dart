@@ -8,11 +8,12 @@ import 'package:portfolio/features/about/presentation/view/widgets/technologies_
 import 'package:portfolio/features/about/presentation/view/widgets/who_am_i_widget.dart';
 
 class DesktopAboutSectionView extends StatelessWidget {
-  const DesktopAboutSectionView({super.key});
-
+  const DesktopAboutSectionView({super.key, required this.aboutKey});
+  final GlobalKey aboutKey;
   @override
   Widget build(BuildContext context) {
     return Padding(
+      key: aboutKey,
       padding: const EdgeInsets.only(right: 50),
       child: Column(
         children: [

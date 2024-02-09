@@ -7,7 +7,17 @@ import 'package:portfolio/features/portfolio/presentation/view/widgets/theme_swi
 class DesktopNavigationBar extends StatelessWidget {
   const DesktopNavigationBar({
     super.key,
+    required this.aboutKey,
+    required this.homeKey,
+    required this.servicesKey,
+    required this.projectsKey,
+    required this.contactsKey,
   });
+  final GlobalKey homeKey;
+  final GlobalKey aboutKey;
+  final GlobalKey servicesKey;
+  final GlobalKey projectsKey;
+  final GlobalKey contactsKey;
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +30,32 @@ class DesktopNavigationBar extends StatelessWidget {
         ),
         Row(
           children: [
-            DesktopNavigationBarItem(title: 'HOME', onPressed: () {}),
-            DesktopNavigationBarItem(title: 'ABOUT', onPressed: () {}),
-            DesktopNavigationBarItem(title: 'SERVICES', onPressed: () {}),
-            DesktopNavigationBarItem(title: 'PROJECTS', onPressed: () {}),
-            DesktopNavigationBarItem(title: 'CONTACT', onPressed: () {}),
+            DesktopNavigationBarItem(
+                title: 'HOME', onPressed: () => scrollToSection(homeKey)),
+            DesktopNavigationBarItem(
+                title: 'ABOUT', onPressed: () => scrollToSection(aboutKey)),
+            DesktopNavigationBarItem(
+                title: 'SERVICES',
+                onPressed: () => scrollToSection(servicesKey)),
+            DesktopNavigationBarItem(
+                title: 'PROJECTS',
+                onPressed: () => scrollToSection(projectsKey)),
+            DesktopNavigationBarItem(
+                title: 'CONTACT',
+                onPressed: () => scrollToSection(contactsKey)),
             const MyResumeDesktopButton(),
             const ThemeSwitch(),
           ],
         )
       ],
     );
+  }
+}
+
+void scrollToSection(GlobalKey key) {
+  final context = key.currentContext;
+  if (context != null) {
+    Scrollable.ensureVisible(context,
+        duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
 }

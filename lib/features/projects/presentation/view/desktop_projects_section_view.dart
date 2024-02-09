@@ -6,8 +6,8 @@ import 'package:portfolio/core/widgets/section_title_widget.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/custom_project_card.dart';
 
 class DesktopProjectsSectionView extends StatefulWidget {
-  const DesktopProjectsSectionView({super.key});
-
+  const DesktopProjectsSectionView({super.key, required this.projectsKey});
+  final GlobalKey projectsKey;
   @override
   State<DesktopProjectsSectionView> createState() =>
       _DesktopProjectsSectionViewState();
@@ -23,6 +23,7 @@ class _DesktopProjectsSectionViewState
         _showAll ? DataRepo.projects : DataRepo.projects.take(5).toList();
 
     return Padding(
+      key: widget.projectsKey,
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: Column(
         children: [
@@ -57,8 +58,7 @@ class _DesktopProjectsSectionViewState
                 ),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(

@@ -4,11 +4,12 @@ import 'package:portfolio/core/widgets/section_title_widget.dart';
 import 'package:portfolio/features/contacts/presentation/view/widgets/contact_card.dart';
 
 class DesktopContactSectionView extends StatelessWidget {
-  const DesktopContactSectionView({super.key});
-
+  const DesktopContactSectionView({super.key, required this.contactKey});
+  final GlobalKey contactKey;
   @override
   Widget build(BuildContext context) {
     return Padding(
+      key: contactKey,
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: Column(
         children: [

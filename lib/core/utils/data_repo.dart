@@ -50,102 +50,102 @@ abstract class DataRepo {
   ];
   static List<ProjectModel> projects = [
     ProjectModel(
-      banner: Assets.assetsImagesTamamBanner,
-      icon: Assets.assetsImagesTamamLogo,
+      banner: Assets.assetsImagesProjectsMediaTamamBanner,
+      icon: Assets.assetsImagesProjectsMediaTamamLogo,
       description:
           'Tamam is a todo app designed to streamline your daily activities, boost productivity, and empower you to achieve your goals efficiently.',
       name: 'Tamam',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesNectarBanner,
-      icon: Assets.assetsImagesNectarLogo,
+      banner: Assets.assetsImagesProjectsMediaNectarBanner,
+      icon: Assets.assetsImagesProjectsMediaNectarLogo,
       description:
           'Online Grocery Shopping Companion. Shop groceries seamlessly with our feature-rich Flutter app.',
       name: 'Nectar',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesAttendoBanner,
-      icon: Assets.assetsImagesAttendoLogo,
+      banner: Assets.assetsImagesProjectsMediaAttendoBanner,
+      icon: Assets.assetsImagesProjectsMediaAttendoLogo,
       description:
           'Attendance Management System based on face recognition - Graduation Project',
       name: 'Attendo',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesEspBanner,
-      icon: Assets.assetsImagesEspLogo,
+      banner: Assets.assetsImagesProjectsMediaEspBanner,
+      icon: Assets.assetsImagesProjectsMediaEspLogo,
       description:
           'A Flutter Project connected with IOT university project that measure temprature, humidity , pressure and altitude',
       name: 'ESP Monitor',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesMushroom,
+      banner: Assets.assetsImagesProjectsMediaXray,
       icon: null,
       description:
           ' Chest X-Ray Images Dataset: Exploarity Data Analysis and Deep learning Models',
       name: ' Chest X-Ray Images Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesHeartDisease,
+      banner: Assets.assetsImagesProjectsMediaHeartDisease,
       icon: null,
       description:
           'Heart Failure Prediction Dataset : Data Analysis, Data Visualization, Data Preprocessing and 7 ML Classification Models',
       name: 'Heart Disease',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesNetflix,
+      banner: Assets.assetsImagesProjectsMediaNetflix,
       icon: null,
       description: 'Netflix Data Analysis and Visualization',
       name: 'Netflix Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesShopping,
+      banner: Assets.assetsImagesProjectsMediaShopping,
       icon: null,
       description: 'Shopping Dataset Analysis and Visualization',
       name: 'Shopping Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesSuperstore,
+      banner: Assets.assetsImagesProjectsMediaSuperstore,
       icon: null,
       description: 'SuperStore Analysis and Visualization',
       name: 'SuperStore Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesTitanic,
+      banner: Assets.assetsImagesProjectsMediaTitanic,
       icon: null,
       description:
           'Titanic Survival Dataset: Data Analysis, Data Visualization, Data Preprocessing, and 7 ML Classification Models',
       name: 'Titanic  Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesIris,
+      banner: Assets.assetsImagesProjectsMediaIris,
       icon: null,
       description:
           'Iris Species Dataset: Data Analysis, Data Visualization, Data Preprocessing, 7 ML Classification Models, and 3 ML Clustering Models',
       name: 'Iris Species Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesMedical,
+      banner: Assets.assetsImagesProjectsMediaMedical,
       icon: null,
       description:
           'Medical Cost Personal Datasets: Data Analysis, Data Visualization, Data Preprocessing, and 5 Regression Models',
       name: 'Medical Cost Personal Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesHousePrice,
+      banner: Assets.assetsImagesProjectsMediaHousePrice,
       icon: null,
       description:
           'House price prediction Dataset: Data Analysis, Data Visualization, Data Preprocessing, and 5 ML Regression Models',
       name: 'House price prediction Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesHousePrice2,
+      banner: Assets.assetsImagesProjectsMediaHousePrice2,
       icon: null,
       description:
           'House price Dataset: Data Analysis, Data Visualization, Data Preprocessing, and 10 ML Regression Models',
       name: 'House price Dataset',
     ),
     ProjectModel(
-      banner: Assets.assetsImagesMushroom,
+      banner: Assets.assetsImagesProjectsMediaMushroom,
       icon: null,
       description:
           ' Mushroom Dataset: Data Analysis, Data Visualization, Data Preprocessing, and 9 ML Classification Models',
