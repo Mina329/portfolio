@@ -58,7 +58,7 @@ class _DesktopProjectsSectionViewState
               ),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 40),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(

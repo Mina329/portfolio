@@ -22,6 +22,8 @@ class CustomFlipCard extends StatelessWidget {
         child: FlipCard(
           fill: Fill.fillBack,
           front: Card(
+            elevation: 20,
+            surfaceTintColor: Colors.transparent,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,6 +43,8 @@ class CustomFlipCard extends StatelessWidget {
             ),
           ),
           back: Card(
+            elevation: 20,
+            surfaceTintColor: Colors.transparent,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(

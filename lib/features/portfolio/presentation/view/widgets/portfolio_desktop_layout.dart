@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/features/about/presentation/view/desktop_about_section_view.dart';
+import 'package:portfolio/features/contacts/presentation/view/desktop_contacts_section_view.dart';
 import 'package:portfolio/features/home/presentation/view/desktop_home_section_view.dart';
 import 'package:portfolio/features/portfolio/presentation/view/widgets/desktop_navigation_bar.dart';
 import 'package:portfolio/features/projects/presentation/view/desktop_projects_section_view.dart';
@@ -52,6 +53,31 @@ class PortfolioDesktopLayout extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: DesktopProjectsSectionView(),
+              ),
+              SliverToBoxAdapter(
+                child: DesktopContactSectionView(),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 50,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Center(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('Developed in 💙 with '),
+                      Text('Flutter',style: TextStyle(color: Colors.blue),),
+                    ],
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 25,
+                ),
               ),
             ],
           ),

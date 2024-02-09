@@ -22,6 +22,8 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
           onEnter: (_) => _setHover(true),
           onExit: (_) => _setHover(false),
           child: Card(
+            elevation: 20,
+            surfaceTintColor: Colors.transparent,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Stack(

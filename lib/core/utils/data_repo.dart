@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:portfolio/core/models/contact_model.dart';
 import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/core/models/service_model.dart';
 import 'package:portfolio/core/utils/assets_manager.dart';
@@ -148,6 +150,23 @@ abstract class DataRepo {
       description:
           ' Mushroom Dataset: Data Analysis, Data Visualization, Data Preprocessing, and 9 ML Classification Models',
       name: ' Mushroom Dataset',
+    ),
+  ];
+  static List<ContactModel> contacts = [
+    ContactModel(
+      iconData: Icons.phone,
+      title: 'Phone',
+      value: '(+20)1280080910',
+    ),
+    ContactModel(
+      iconData: Icons.mail,
+      title: 'Email',
+      value: 'mina.emil.fakhry@outlook.com',
+    ),
+    ContactModel(
+      iconData: Icons.home,
+      title: 'Location',
+      value: 'Cairo, Egypt',
     ),
   ];
 }
