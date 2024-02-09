@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/features/about/presentation/view/desktop_about_section_view.dart';
 import 'package:portfolio/features/home/presentation/view/desktop_home_section_view.dart';
 import 'package:portfolio/features/portfolio/presentation/view/widgets/desktop_navigation_bar.dart';
+import 'package:portfolio/features/projects/presentation/view/desktop_projects_section_view.dart';
 import 'package:portfolio/features/services/presentation/view/desktop_services_section_view.dart';
 
 class PortfolioDesktopLayout extends StatelessWidget {
@@ -48,6 +49,9 @@ class PortfolioDesktopLayout extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: DesktopServicesSectionView(),
+              ),
+              SliverToBoxAdapter(
+                child: DesktopProjectsSectionView(),
               ),
             ],
           ),
