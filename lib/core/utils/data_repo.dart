@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/core/models/contact_model.dart';
+import 'package:portfolio/core/models/drawer_item_model.dart';
 import 'package:portfolio/core/models/links_model.dart';
 import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/core/models/service_model.dart';
@@ -535,6 +536,32 @@ abstract class DataRepo {
       iconData: Icons.home,
       title: 'Location',
       value: 'Cairo, Egypt',
+    ),
+  ];
+  static List<DrawerItemModel> drawerItems = [
+    DrawerItemModel(
+      iconData: FontAwesomeIcons.house,
+      text: 'HOME',
+    ),
+    DrawerItemModel(
+      iconData: FontAwesomeIcons.solidUser,
+      text: 'ABOUT',
+    ),
+    DrawerItemModel(
+      iconData: FontAwesomeIcons.briefcase,
+      text: 'SERVICES',
+    ),
+    DrawerItemModel(
+      iconData: FontAwesomeIcons.listCheck,
+      text: 'PROJECTS',
+    ),
+    DrawerItemModel(
+      iconData: FontAwesomeIcons.idCard,
+      text: 'CONTACT',
+    ),
+    DrawerItemModel(
+      iconData: FontAwesomeIcons.solidBookmark,
+      text: 'RESUME',
     ),
   ];
 }

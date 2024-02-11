@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -36,7 +34,6 @@ class _ProjectMediaPageViewState extends State<ProjectMediaPageView> {
 
   @override
   Widget build(BuildContext context) {
-    log(Theme.of(context).brightness.toString());
     return Column(
       children: [
         SizedBox(

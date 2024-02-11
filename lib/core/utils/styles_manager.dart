@@ -15,6 +15,18 @@ abstract class StylesManager {
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w500,
             );
+  static TextStyle styleMedium15(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 15),
+              fontWeight: FontWeight.w500,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 15),
+              fontWeight: FontWeight.w500,
+            );
   static TextStyle styleExtraLight18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
           ? GoogleFonts.poppins(
@@ -99,6 +111,18 @@ abstract class StylesManager {
               fontSize: getResponsiveFontSize(context, fontSize: 100),
               fontWeight: FontWeight.w700,
             );
+  static TextStyle styleSemiBold15(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? GoogleFonts.poppins(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, fontSize: 15),
+              fontWeight: FontWeight.w800,
+            )
+          : GoogleFonts.poppins(
+              color: Colors.black,
+              fontSize: getResponsiveFontSize(context, fontSize: 15),
+              fontWeight: FontWeight.w800,
+            );
   static TextStyle styleSemiBold18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
           ? GoogleFonts.poppins(
@@ -115,12 +139,12 @@ abstract class StylesManager {
       Theme.of(context).brightness == Brightness.dark
           ? GoogleFonts.dancingScript(
               color: Colors.white,
-              fontSize: getResponsiveFontSize(context, fontSize: 50),
+              fontSize: getResponsiveFontSize(context, fontSize: 40),
               fontWeight: FontWeight.w900,
             )
           : GoogleFonts.dancingScript(
               color: Colors.black,
-              fontSize: getResponsiveFontSize(context, fontSize: 50),
+              fontSize: getResponsiveFontSize(context, fontSize: 40),
               fontWeight: FontWeight.w900,
             );
 }

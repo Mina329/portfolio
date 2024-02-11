@@ -1,9 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/themes_manager.dart';
 import 'package:portfolio/features/portfolio/presentation/view/portfolio_view.dart';
+import 'package:window_manager/window_manager.dart';
 
 final ValueNotifier<ThemeMode> notifier = ValueNotifier(ThemeMode.dark);
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
+    await windowManager.ensureInitialized();
+    await windowManager.setMinimumSize(
+      const Size(300, 300),
+    );
+  }
   runApp(const Portfolio());
 }
 

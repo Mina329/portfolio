@@ -3,7 +3,9 @@ import 'package:portfolio/core/utils/colors_manager.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
 
 class MyResumeDesktopButton extends StatelessWidget {
-  const MyResumeDesktopButton({super.key});
+  const MyResumeDesktopButton({super.key, this.onPressed, required this.text});
+  final Function()? onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class MyResumeDesktopButton extends StatelessWidget {
       child: SizedBox(
         height: 40,
         child: MaterialButton(
-          onPressed: () {},
+          onPressed: onPressed,
           hoverColor: const Color(0xffda8b82),
           shape: RoundedRectangleBorder(
             side: const BorderSide(
@@ -25,7 +27,7 @@ class MyResumeDesktopButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
-              'Resume',
+              text,
               style: StylesManager.styleSemiBold18(context),
             ),
           ),

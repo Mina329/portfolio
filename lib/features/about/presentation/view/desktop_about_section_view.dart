@@ -3,9 +3,11 @@ import 'package:portfolio/core/utils/assets_manager.dart';
 import 'package:portfolio/core/utils/colors_manager.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
 import 'package:portfolio/core/widgets/section_title_widget.dart';
+import 'package:portfolio/features/about/presentation/view/widgets/my_cvs_widget.dart';
 import 'package:portfolio/features/about/presentation/view/widgets/personal_info_widget.dart';
 import 'package:portfolio/features/about/presentation/view/widgets/technologies_i_worked_with_widget.dart';
 import 'package:portfolio/features/about/presentation/view/widgets/who_am_i_widget.dart';
+
 
 class DesktopAboutSectionView extends StatelessWidget {
   const DesktopAboutSectionView({super.key, required this.aboutKey});
@@ -51,7 +53,11 @@ class DesktopAboutSectionView extends StatelessWidget {
                       height: 50,
                       color: ColorsManager.greyColor,
                     ),
-                    PersonalInfoWidget()
+                    PersonalInfoWidget(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    MyCVsWidget(),
                   ],
                 ),
               )

@@ -15,8 +15,7 @@ class DesktopHomeSectionView extends StatelessWidget {
           image: AssetImage(
             Assets.assetsImagesBlackWhite,
           ),
-          alignment: Alignment.centerRight,
-          scale: 1.1,
+          alignment: Alignment.bottomRight,
         ),
       ),
       child: const HomeProfileCard(),

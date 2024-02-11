@@ -43,7 +43,10 @@ class DesktopNavigationBar extends StatelessWidget {
             DesktopNavigationBarItem(
                 title: 'CONTACT',
                 onPressed: () => scrollToSection(contactsKey)),
-            const MyResumeDesktopButton(),
+            MyResumeDesktopButton(
+              onPressed: () => scrollToSection(aboutKey),
+              text: 'Resume',
+            ),
             const ThemeSwitch(),
           ],
         )
