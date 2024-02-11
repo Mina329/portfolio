@@ -9,9 +9,15 @@ class SectionTitleWidget extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: StylesManager.styleExtraLight60(context),
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Text(
+          title,
+          style: StylesManager.styleExtraLight60(context),
+        ),
+      ),
     );
   }
 }

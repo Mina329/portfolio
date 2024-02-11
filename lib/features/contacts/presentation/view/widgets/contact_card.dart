@@ -19,23 +19,29 @@ class ContactCard extends StatelessWidget {
         child: Card(
           elevation: 20,
           surfaceTintColor: Colors.transparent,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(
-                contactModel.iconData,
-                color: ColorsManager.primaryColor,
-                size: getResponsiveFontSize(context, fontSize: 100),
-              ),
-              Text(
-                contactModel.title,
-                style: StylesManager.styleSemiBold18(context),
-              ),
-              Text(
-                contactModel.value,
-                style: StylesManager.styleExtraLight18(context),
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  contactModel.iconData,
+                  color: ColorsManager.primaryColor,
+                  size: getResponsiveFontSize(context, fontSize: 100),
+                ),
+                Text(
+                  contactModel.title,
+                  style: StylesManager.styleSemiBold18(context),
+                ),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    contactModel.value,
+                    style: StylesManager.styleExtraLight18(context),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
