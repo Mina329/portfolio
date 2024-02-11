@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
-import 'package:portfolio/features/projects/presentation/view/widgets/custom_project_card.dart';
 
 class FeaturesSection extends StatelessWidget {
   const FeaturesSection({
     super.key,
-    required this.widget,
     required this.mainContext,
+    required this.projectModel,
   });
 
-  final CustomProjectCard widget;
+  final ProjectModel projectModel;
   final BuildContext mainContext;
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class FeaturesSection extends StatelessWidget {
           height: 20,
         ),
         ...List.generate(
-          widget.projectModel.features.length,
+          projectModel.features.length,
           (index) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Text(
-              '${index + 1}. ${widget.projectModel.features[index]}',
+              '${index + 1}. ${projectModel.features[index]}',
               style: StylesManager.styleExtraLight18(
                 mainContext,
               ),

@@ -17,9 +17,7 @@ class MyCVsWidget extends StatelessWidget {
           onPressed: () async {
             var url =
                 'https://drive.google.com/file/d/1QkMrRmvHsz8fcfPE5EGhd2b-hSyROzpe/view?usp=drive_link';
-            if (await canLaunchUrl(Uri.parse(url))) {
-              await launchUrl(Uri.parse(url));
-            }
+            await launchUrl(Uri.parse(url));
           },
         ),
         const SizedBox(
@@ -30,9 +28,7 @@ class MyCVsWidget extends StatelessWidget {
           onPressed: () async {
             var url =
                 'https://drive.google.com/file/d/1T3q3Bos9cjr6_By0k48ss9WiWJfnLqn3/view?usp=drive_link';
-            if (await canLaunchUrl(Uri.parse(url))) {
-              await launchUrl(Uri.parse(url));
-            }
+            await launchUrl(Uri.parse(url));
           },
         ),
       ],

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
-import 'package:portfolio/features/projects/presentation/view/widgets/custom_project_card.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/link_button.dart';
 
 class LinksSectionList extends StatelessWidget {
   const LinksSectionList({
     super.key,
     required this.mainContext,
-    required this.widget,
+    required this.projectModel,
   });
   final BuildContext mainContext;
-  final CustomProjectCard widget;
-
+  final ProjectModel projectModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,15 +23,15 @@ class LinksSectionList extends StatelessWidget {
           ),
         ),
         const Divider(
-          height: 10,
+          height: 40,
         ),
         ...List.generate(
-          widget.projectModel.links.length,
+          projectModel.links.length,
           (index) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: LinkButton(
                 mainContext: mainContext,
-                linksModel: widget.projectModel.links[index]),
+                linksModel: projectModel.links[index]),
           ),
         ),
       ],

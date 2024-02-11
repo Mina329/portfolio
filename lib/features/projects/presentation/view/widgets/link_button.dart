@@ -19,9 +19,7 @@ class LinkButton extends StatelessWidget {
       height: 50,
       child: MaterialButton(
         onPressed: () async {
-          if (await canLaunchUrl(Uri.parse(linksModel.link))) {
-            await launchUrl(Uri.parse(linksModel.link));
-          }
+          await launchUrl(Uri.parse(linksModel.link));
         },
         shape: RoundedRectangleBorder(
           side: const BorderSide(

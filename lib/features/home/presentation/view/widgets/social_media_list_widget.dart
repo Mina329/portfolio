@@ -18,9 +18,7 @@ class SocialMediaListWidget extends StatelessWidget {
             icon: FontAwesomeIcons.facebook,
             onPressed: () async {
               var url = 'https://www.facebook.com/bijita30/';
-              if (await canLaunchUrl(Uri.parse(url))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchUrl(Uri.parse(url));
             },
           ),
         ),
@@ -30,9 +28,7 @@ class SocialMediaListWidget extends StatelessWidget {
             icon: FontAwesomeIcons.github,
             onPressed: () async {
               var url = 'https://github.com/Mina329';
-              if (await canLaunchUrl(Uri.parse(url))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchUrl(Uri.parse(url));
             },
           ),
         ),
@@ -42,9 +38,7 @@ class SocialMediaListWidget extends StatelessWidget {
             icon: FontAwesomeIcons.linkedin,
             onPressed: () async {
               var url = 'https://www.linkedin.com/in/mina-emil-fakhry/';
-              if (await canLaunchUrl(Uri.parse(url))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchUrl(Uri.parse(url));
             },
           ),
         ),
@@ -54,9 +48,7 @@ class SocialMediaListWidget extends StatelessWidget {
             icon: FontAwesomeIcons.instagram,
             onPressed: () async {
               var url = 'https://www.instagram.com/minaemil32/';
-              if (await canLaunchUrl(Uri.parse(url))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchUrl(Uri.parse(url));
             },
           ),
         ),
@@ -66,9 +58,7 @@ class SocialMediaListWidget extends StatelessWidget {
             icon: FontAwesomeIcons.kaggle,
             onPressed: () async {
               var url = 'https://www.kaggle.com/minaemil329';
-              if (await canLaunchUrl(Uri.parse(url))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchUrl(Uri.parse(url));
             },
           ),
         ),
@@ -78,9 +68,7 @@ class SocialMediaListWidget extends StatelessWidget {
             icon: FontAwesomeIcons.whatsapp,
             onPressed: () async {
               var url = 'https://api.whatsapp.com/send?phone=201280080910';
-              if (await canLaunchUrl(Uri.parse(url))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchUrl(Uri.parse(url));
             },
           ),
         )

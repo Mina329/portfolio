@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/models/project_model.dart';
+import 'package:portfolio/core/utils/size_config.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
+import 'package:portfolio/features/projects/presentation/view/project_details_view.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/project_dialog_body.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/project_dialog_title.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/project_media_page_view.dart';
@@ -19,7 +23,14 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _showProjectDetailsDialog(context),
+      onTap: () => MediaQuery.of(context).size.width < SizeConfig.desktop
+          ? Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) =>
+                    ProjectDetailsView(projectModel: widget.projectModel),
+              ),
+            )
+          : _showProjectDetailsDialog(context),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 450, maxHeight: 300),
         child: AspectRatio(
@@ -74,16 +85,18 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
                     ),
                     widget.projectModel.banner == null
                         ? const SizedBox()
-                        : AnimatedOpacity(
-                            duration: const Duration(milliseconds: 400),
-                            opacity: isHover ? 0.0 : 1.0,
-                            child: Image(
-                              fit: BoxFit.fill,
-                              image: AssetImage(
-                                widget.projectModel.banner!,
+                        : Platform.isAndroid || Platform.isIOS
+                            ? const SizedBox()
+                            : AnimatedOpacity(
+                                duration: const Duration(milliseconds: 400),
+                                opacity: isHover ? 0.0 : 1.0,
+                                child: Image(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage(
+                                    widget.projectModel.banner!,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
                   ],
                 ),
               ),
@@ -124,15 +137,15 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       ProjectDialogTitle(
-                        widget: widget,
+                        projectModel: widget.projectModel,
                         mainContext: context,
                       ),
                       const SizedBox(height: 10),
                       ProjectMediaPageView(
-                        widget: widget,
+                        projectModel: widget.projectModel,
                       ),
                       ProjectDialogBody(
-                        widget: widget,
+                        projectModel: widget.projectModel,
                         mainContext: context,
                       )
                     ],

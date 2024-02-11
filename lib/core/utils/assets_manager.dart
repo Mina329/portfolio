@@ -17,6 +17,10 @@ class Assets {
   /// assets/images/colored.png
   static const String assetsImagesColored = "assets/images/colored.png";
 
+  /// Assets for assetsImagesColoredCircle
+  /// assets/images/colored-circle.png
+  static const String assetsImagesColoredCircle = "assets/images/colored-circle.png";
+
   /// Assets for assetsImagesComputer
   /// assets/images/computer.svg
   static const String assetsImagesComputer = "assets/images/computer.svg";

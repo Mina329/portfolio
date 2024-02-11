@@ -14,9 +14,7 @@ class HireMeButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: () async {
           var whatsappUrl = 'https://api.whatsapp.com/send?phone=201280080910';
-          if (await canLaunchUrl(Uri.parse(whatsappUrl))) {
-            await launchUrl(Uri.parse(whatsappUrl));
-          }
+          await launchUrl(Uri.parse(whatsappUrl));
         },
         color: ColorsManager.primaryColor,
         child: Padding(

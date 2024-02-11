@@ -25,6 +25,7 @@ class PortfolioView extends StatelessWidget {
           ? AppBar(
               elevation: 0,
               backgroundColor: Colors.transparent,
+              surfaceTintColor: Colors.transparent,
               actions: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -54,7 +55,13 @@ class PortfolioView extends StatelessWidget {
             )
           : null,
       body: AdaptiveLayout(
-        mobileLayout: (context) => const PortfolioMobileLayout(),
+        mobileLayout: (context) => PortfolioMobileLayout(
+          homeSectionKey: homeSectionKey,
+          aboutSectionKey: aboutSectionKey,
+          contactSectionKey: contactSectionKey,
+          projectsSectionKey: projectsSectionKey,
+          servicesSectionKey: servicesSectionKey,
+        ),
         tabletLayout: (context) => PortfolioTabletLayout(
           homeSectionKey: homeSectionKey,
           aboutSectionKey: aboutSectionKey,

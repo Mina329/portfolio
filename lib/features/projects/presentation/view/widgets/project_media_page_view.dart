@@ -1,19 +1,18 @@
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/core/utils/colors_manager.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/custom_dot_indicator.dart';
-import 'package:portfolio/features/projects/presentation/view/widgets/custom_project_card.dart';
 
 class ProjectMediaPageView extends StatefulWidget {
   const ProjectMediaPageView({
     super.key,
-    required this.widget,
+    required this.projectModel,
   });
 
-  final CustomProjectCard widget;
-
+  final ProjectModel projectModel;
   @override
   State<ProjectMediaPageView> createState() => _ProjectMediaPageViewState();
 }
@@ -60,14 +59,13 @@ class _ProjectMediaPageViewState extends State<ProjectMediaPageView> {
                   controller: pageController,
                   scrollDirection: Axis.horizontal,
                   children: List.generate(
-                    widget.widget.projectModel.media.length,
+                    widget.projectModel.media.length,
                     (index) => SizedBox(
                       height: MediaQuery.of(context).size.height * 0.5,
                       child: AspectRatio(
                         aspectRatio: 16 / 9,
                         child: Image(
-                          image: AssetImage(
-                              widget.widget.projectModel.media[index]),
+                          image: AssetImage(widget.projectModel.media[index]),
                         ),
                       ),
                     ),
@@ -82,7 +80,7 @@ class _ProjectMediaPageViewState extends State<ProjectMediaPageView> {
                 ),
                 onPressed: () {
                   if (pageController.page! <
-                      widget.widget.projectModel.media.length - 1) {
+                      widget.projectModel.media.length - 1) {
                     pageController.nextPage(
                         duration: const Duration(milliseconds: 400),
                         curve: Curves.easeInOut);
@@ -98,7 +96,7 @@ class _ProjectMediaPageViewState extends State<ProjectMediaPageView> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
-            widget.widget.projectModel.media.length,
+            widget.projectModel.media.length,
             (index) => Padding(
               padding: const EdgeInsets.only(right: 6),
               child: CustomDotIndicator(

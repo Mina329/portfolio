@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/features/projects/presentation/view/widgets/custom_project_card.dart';
+import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/features_section.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/links_section_list.dart';
 
 class ProjectDialogBody extends StatelessWidget {
   const ProjectDialogBody({
     super.key,
-    required this.widget,
     required this.mainContext,
+    required this.projectModel,
   });
 
-  final CustomProjectCard widget;
+  final ProjectModel projectModel;
   final BuildContext mainContext;
   @override
   Widget build(BuildContext context) {
@@ -20,14 +20,14 @@ class ProjectDialogBody extends StatelessWidget {
         Expanded(
           flex: 4,
           child: FeaturesSection(
-            widget: widget,
+            projectModel: projectModel,
             mainContext: mainContext,
           ),
         ),
         Expanded(
           child: LinksSectionList(
             mainContext: mainContext,
-            widget: widget,
+            projectModel: projectModel,
           ),
         ),
       ],
