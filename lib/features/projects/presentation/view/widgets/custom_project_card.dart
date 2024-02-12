@@ -35,69 +35,75 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
         constraints: const BoxConstraints(maxWidth: 450, maxHeight: 300),
         child: AspectRatio(
           aspectRatio: 16 / 9,
-          child: MouseRegion(
-            onEnter: (_) => _setHover(true),
-            onExit: (_) => _setHover(false),
-            child: Card(
-              elevation: 20,
-              surfaceTintColor: Colors.transparent,
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        widget.projectModel.icon == null
-                            ? const SizedBox()
-                            : ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  maxWidth: getResponsiveFontSize(
-                                    context,
-                                    fontSize: 60,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 450, maxHeight: 300),
+            child: MouseRegion(
+              onEnter: (_) => _setHover(true),
+              onExit: (_) => _setHover(false),
+              child: Card(
+                elevation: 20,
+                surfaceTintColor: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          widget.projectModel.icon == null
+                              ? const SizedBox()
+                              : ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    maxWidth: getResponsiveFontSize(
+                                      context,
+                                      fontSize: 60,
+                                    ),
+                                    maxHeight: getResponsiveFontSize(
+                                      context,
+                                      fontSize: 60,
+                                    ),
                                   ),
-                                  maxHeight: getResponsiveFontSize(
-                                    context,
-                                    fontSize: 60,
-                                  ),
-                                ),
-                                child: Image(
-                                  image: AssetImage(
-                                    widget.projectModel.icon!,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                        Text(
-                          widget.projectModel.name!,
-                          textAlign: TextAlign.center,
-                          style: StylesManager.styleSemiBold18(context),
-                        ),
-                        widget.projectModel.description == null
-                            ? const SizedBox()
-                            : Text(
-                                widget.projectModel.description!,
-                                textAlign: TextAlign.center,
-                                style: StylesManager.styleExtraLight18(context),
-                              ),
-                      ],
-                    ),
-                    widget.projectModel.banner == null
-                        ? const SizedBox()
-                        : Platform.isAndroid || Platform.isIOS
-                            ? const SizedBox()
-                            : AnimatedOpacity(
-                                duration: const Duration(milliseconds: 400),
-                                opacity: isHover ? 0.0 : 1.0,
-                                child: Image(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                    widget.projectModel.banner!,
+                                  child: Image(
+                                    image: AssetImage(
+                                      widget.projectModel.icon!,
+                                    ),
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
-                              ),
-                  ],
+                          Text(
+                            widget.projectModel.name!,
+                            textAlign: TextAlign.center,
+                            style: StylesManager.styleSemiBold18(context),
+                          ),
+                          widget.projectModel.description == null
+                              ? const SizedBox()
+                              : Text(
+                                  widget.projectModel.description!,
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      StylesManager.styleExtraLight18(context),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                ),
+                        ],
+                      ),
+                      widget.projectModel.banner == null
+                          ? const SizedBox()
+                          : Platform.isAndroid || Platform.isIOS
+                              ? const SizedBox()
+                              : AnimatedOpacity(
+                                  duration: const Duration(milliseconds: 400),
+                                  opacity: isHover ? 0.0 : 1.0,
+                                  child: Image(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                      widget.projectModel.banner!,
+                                    ),
+                                  ),
+                                ),
+                    ],
+                  ),
                 ),
               ),
             ),

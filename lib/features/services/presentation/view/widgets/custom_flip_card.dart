@@ -17,10 +17,13 @@ class CustomFlipCard extends StatelessWidget {
       constraints: const BoxConstraints(maxHeight: 300, maxWidth: 300),
       child: AspectRatio(
         aspectRatio: 1,
-        child: FlipCard(
-          fill: Fill.fillBack,
-          front: FrontFlipCard(serviceModel: serviceModel),
-          back: BackFlipCard(serviceModel: serviceModel),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxHeight: 300, maxWidth: 300),
+          child: FlipCard(
+            fill: Fill.fillBack,
+            front: FrontFlipCard(serviceModel: serviceModel),
+            back: BackFlipCard(serviceModel: serviceModel),
+          ),
         ),
       ),
     );

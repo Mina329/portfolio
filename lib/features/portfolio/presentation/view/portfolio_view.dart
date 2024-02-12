@@ -8,17 +8,51 @@ import 'package:portfolio/features/portfolio/presentation/view/widgets/portfolio
 import 'package:portfolio/features/portfolio/presentation/view/widgets/portfolio_mobile_layout.dart';
 import 'package:portfolio/features/portfolio/presentation/view/widgets/portfolio_tablet_layout.dart';
 
-class PortfolioView extends StatelessWidget {
+class PortfolioView extends StatefulWidget {
   const PortfolioView({super.key});
-  static GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-  static GlobalKey homeSectionKey = GlobalKey();
-  static GlobalKey aboutSectionKey = GlobalKey();
-  static GlobalKey servicesSectionKey = GlobalKey();
-  static GlobalKey projectsSectionKey = GlobalKey();
-  static GlobalKey contactSectionKey = GlobalKey();
+
+  @override
+  State<PortfolioView> createState() => _PortfolioViewState();
+}
+
+class _PortfolioViewState extends State<PortfolioView> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  final GlobalKey homeSectionKey = GlobalKey();
+  final GlobalKey aboutSectionKey = GlobalKey();
+  final GlobalKey servicesSectionKey = GlobalKey();
+  final GlobalKey projectsSectionKey = GlobalKey();
+  final GlobalKey contactSectionKey = GlobalKey();
+  final ScrollController scrollController = ScrollController();
+  double savedScrollPosition = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(_saveScrollPosition);
+  }
+
+  void _restoreScrollPosition() {
+    if (scrollController.hasClients) {
+      scrollController.jumpTo(savedScrollPosition);
+    }
+  }
+
+  void _saveScrollPosition() {
+    savedScrollPosition = scrollController.offset;
+  }
+
+  @override
+  void dispose() {
+    scrollController.removeListener(_saveScrollPosition);
+    scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _restoreScrollPosition());
+
     return Scaffold(
       key: scaffoldKey,
       appBar: MediaQuery.sizeOf(context).width < SizeConfig.desktop
@@ -56,6 +90,7 @@ class PortfolioView extends StatelessWidget {
           : null,
       body: AdaptiveLayout(
         mobileLayout: (context) => PortfolioMobileLayout(
+          scrollController: scrollController,
           homeSectionKey: homeSectionKey,
           aboutSectionKey: aboutSectionKey,
           contactSectionKey: contactSectionKey,
@@ -63,6 +98,7 @@ class PortfolioView extends StatelessWidget {
           servicesSectionKey: servicesSectionKey,
         ),
         tabletLayout: (context) => PortfolioTabletLayout(
+          scrollController: scrollController,
           homeSectionKey: homeSectionKey,
           aboutSectionKey: aboutSectionKey,
           contactSectionKey: contactSectionKey,
@@ -70,6 +106,7 @@ class PortfolioView extends StatelessWidget {
           servicesSectionKey: servicesSectionKey,
         ),
         desktopLayout: (context) => PortfolioDesktopLayout(
+          scrollController: scrollController,
           homeSectionKey: homeSectionKey,
           aboutSectionKey: aboutSectionKey,
           contactSectionKey: contactSectionKey,

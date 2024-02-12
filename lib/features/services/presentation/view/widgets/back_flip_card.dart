@@ -24,13 +24,11 @@ class BackFlipCard extends StatelessWidget {
           children: [
             ...serviceModel.services
                 .map(
-                  (text) => FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      text,
-                      style: StylesManager.styleExtraLight18(context),
-                    ),
+                  (text) => Text(
+                    text,
+                    style: StylesManager.styleExtraLight18(context),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 )
                 .toList(),

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/themes_manager.dart';
 import 'package:portfolio/features/portfolio/presentation/view/portfolio_view.dart';
@@ -12,14 +11,11 @@ void main() async {
   if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
     await windowManager.ensureInitialized();
     await windowManager.setMinimumSize(
-      const Size(300, 300),
+      const Size(300, 600),
     );
   }
   runApp(
-    DevicePreview(
-      enabled: false,
-      builder: (context) => const Portfolio(),
-    ),
+    const Portfolio(),
   );
 }
 
@@ -33,7 +29,6 @@ class Portfolio extends StatelessWidget {
       builder: (context, value, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          builder: DevicePreview.appBuilder,
           home: const PortfolioView(),
           theme: ThemeManager.lightThemeData,
           darkTheme: ThemeManager.darkThemeData,

@@ -13,41 +13,26 @@ abstract class DataRepo {
       serviceIcon: Assets.assetsImagesMobile,
       serviceTitle: 'Mobile App\nDevelopment',
       services: [
-        'Mobile app development via Flutter',
-        '- Splash Screen',
-        '- APIs',
-        '- Firebase',
-        '- Database',
-        '- Responsive'
+        'Flutter-based mobile app development.'
       ],
     ),
     ServiceModel(
       serviceIcon: Assets.assetsImagesComputer,
       serviceTitle: 'Desktop App\nDevelopment',
       services: [
-        'Desktop app development via Flutter',
-        '- APIs',
-        '- Firebase',
-        '- Database',
-        '- Responsive',
-        '- Adaptive',
+        'Flutter-powered desktop app development.'
       ],
     ),
     ServiceModel(
       serviceIcon: Assets.assetsImagesDataAnalysis,
       serviceTitle: 'Data Analysis',
-      services: [
-        '- Data Analysis',
-        '- Data Visualization',
-        '- Dashboard',
-      ],
+      services: ['Data analysis and visualization with dashboard creation.'],
     ),
     ServiceModel(
       serviceIcon: Assets.assetsImagesAi,
       serviceTitle: 'ML & Deep learning\nModels',
       services: [
-        '- ML models',
-        '- Deep learning Models',
+        'Implementation of machine learning and deep learning models.'
       ],
     ),
   ];

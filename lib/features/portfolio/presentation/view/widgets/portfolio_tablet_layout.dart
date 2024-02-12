@@ -12,16 +12,18 @@ class PortfolioTabletLayout extends StatelessWidget {
       required this.aboutSectionKey,
       required this.servicesSectionKey,
       required this.projectsSectionKey,
-      required this.contactSectionKey});
+      required this.contactSectionKey,
+      required this.scrollController});
   final GlobalKey homeSectionKey;
   final GlobalKey aboutSectionKey;
   final GlobalKey servicesSectionKey;
   final GlobalKey projectsSectionKey;
   final GlobalKey contactSectionKey;
-
+  final ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      controller: scrollController,
       slivers: [
         SliverToBoxAdapter(
           child: Padding(

@@ -16,31 +16,35 @@ class ContactCard extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 450, maxHeight: 300),
       child: AspectRatio(
         aspectRatio: 16 / 9,
-        child: Card(
-          elevation: 20,
-          surfaceTintColor: Colors.transparent,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  contactModel.iconData,
-                  color: ColorsManager.primaryColor,
-                  size: getResponsiveFontSize(context, fontSize: 100),
-                ),
-                Text(
-                  contactModel.title,
-                  style: StylesManager.styleSemiBold18(context),
-                ),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    contactModel.value,
-                    style: StylesManager.styleExtraLight18(context),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 450, maxHeight: 300),
+          child: Card(
+            elevation: 20,
+            surfaceTintColor: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    contactModel.iconData,
+                    color: ColorsManager.primaryColor,
+                    size: getResponsiveFontSize(context, fontSize: 100),
                   ),
-                ),
-              ],
+                  Text(
+                    contactModel.title,
+                    style: StylesManager.styleSemiBold18(context),
+                  ),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      contactModel.value,
+                      overflow: TextOverflow.ellipsis,
+                      style: StylesManager.styleExtraLight18(context),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
