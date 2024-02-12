@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/models/project_model.dart';
 import 'package:portfolio/core/utils/size_config.dart';
@@ -90,7 +88,8 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
                       ),
                       widget.projectModel.banner == null
                           ? const SizedBox()
-                          : Platform.isAndroid || Platform.isIOS
+                          : MediaQuery.of(context).size.width <
+                                  SizeConfig.desktop
                               ? const SizedBox()
                               : AnimatedOpacity(
                                   duration: const Duration(milliseconds: 400),

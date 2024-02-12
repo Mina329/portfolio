@@ -8,12 +8,15 @@ import 'package:window_manager/window_manager.dart';
 final ValueNotifier<ThemeMode> notifier = ValueNotifier(ThemeMode.dark);
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
-    await windowManager.ensureInitialized();
-    await windowManager.setMinimumSize(
-      const Size(300, 600),
-    );
-  }
+  try {
+    if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
+      await windowManager.ensureInitialized();
+      await windowManager.setMinimumSize(
+        const Size(300, 600),
+      );
+    }
+  } catch (e) {}
+
   runApp(
     const Portfolio(),
   );
