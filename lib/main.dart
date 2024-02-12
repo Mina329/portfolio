@@ -31,6 +31,7 @@ class Portfolio extends StatelessWidget {
       valueListenable: notifier,
       builder: (context, value, child) {
         return MaterialApp(
+          title: 'Mina',
           debugShowCheckedModeBanner: false,
           home: const PortfolioView(),
           theme: ThemeManager.lightThemeData,

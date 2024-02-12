@@ -17,6 +17,8 @@ jobs:
       run: flutter pub get
     - name: Build
       run: flutter build web
+    - name: Remove <base href="/"> tag from index.html
+      run: sed -i '/<base href="\/">/d' build/web/index.html
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
