@@ -1,9 +1,9 @@
 class Assets {
   Assets._();
   
-  /// Assets for assetsAnimationWaving
-  /// assets/animation/waving.json
-  static const String assetsAnimationWaving = "assets/animation/waving.json";
+  /// Assets for assetsAnimationWave
+  /// assets/animation/wave.gif
+  static const String assetsAnimationWave = "assets/animation/wave.gif";
 
   /// Assets for assetsImagesAi
   /// assets/images/ai.svg
@@ -28,6 +28,10 @@ class Assets {
   /// Assets for assetsImagesDataAnalysis
   /// assets/images/data_analysis.svg
   static const String assetsImagesDataAnalysis = "assets/images/data_analysis.svg";
+
+  /// Assets for assetsImagesLogo
+  /// assets/images/logo.png
+  static const String assetsImagesLogo = "assets/images/logo.png";
 
   /// Assets for assetsImagesMobile
   /// assets/images/mobile.svg

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:portfolio/core/utils/assets_manager.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
 
@@ -24,8 +23,8 @@ class WelcomeWidget extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        Lottie.asset(
-          Assets.assetsAnimationWaving,
+        Image.asset(
+          Assets.assetsAnimationWave,
           width: getResponsiveFontSize(context, fontSize: 60),
         ),
       ],
