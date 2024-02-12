@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/models/project_model.dart';
+import 'package:portfolio/core/utils/styles_manager.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/project_dialog_title.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/tablet_project_dialog_body.dart';
 import 'package:portfolio/features/projects/presentation/view/widgets/tablet_project_media_page_view.dart';
@@ -27,6 +28,12 @@ class ProjectDetailsView extends StatelessWidget {
               const SizedBox(height: 10),
               TabletProjectMediaPageView(
                 projectModel: projectModel,
+              ),
+              const SizedBox(height: 30),
+              Text(
+                projectModel.description!,
+                textAlign: TextAlign.center,
+                style: StylesManager.styleExtraLight18(context),
               ),
               const SizedBox(height: 30),
               TabletProjectDialogBody(

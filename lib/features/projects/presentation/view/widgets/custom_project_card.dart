@@ -83,8 +83,8 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
                                   textAlign: TextAlign.center,
                                   style:
                                       StylesManager.styleExtraLight18(context),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                         ],
                       ),
@@ -150,6 +150,13 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
                       ProjectMediaPageView(
                         projectModel: widget.projectModel,
                       ),
+                      const SizedBox(height: 30),
+                      Text(
+                        widget.projectModel.description!,
+                        textAlign: TextAlign.center,
+                        style: StylesManager.styleExtraLight18(context),
+                      ),
+                      const SizedBox(height: 30),
                       ProjectDialogBody(
                         projectModel: widget.projectModel,
                         mainContext: context,
