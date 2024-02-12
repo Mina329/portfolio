@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/features/about/presentation/view/Mobile_about_section_view.dart';
+import 'package:portfolio/features/about/presentation/view/mobile_about_section_view.dart';
 import 'package:portfolio/features/contacts/presentation/view/tablet_contact_section_view.dart';
 import 'package:portfolio/features/home/presentation/view/mobile_home_section_view.dart';
 import 'package:portfolio/features/projects/presentation/view/tablet_projects_section_view.dart';
