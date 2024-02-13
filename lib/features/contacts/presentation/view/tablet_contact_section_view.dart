@@ -22,11 +22,14 @@ class TabletContactSectionView extends StatelessWidget {
           CarouselSlider.builder(
             itemCount: DataRepo.contacts.length,
             itemBuilder: (BuildContext context, int itemIndex, int i) =>
-                ContactCard(
-              contactModel: DataRepo.contacts[i],
-            ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 25),
+                  child: ContactCard(
+                                contactModel: DataRepo.contacts[i],
+                              ),
+                ),
             options: CarouselOptions(
-              height: 300,
+              height: 350,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 5),
               enlargeCenterPage: true,

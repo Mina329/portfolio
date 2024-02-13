@@ -20,11 +20,14 @@ class TabletProjectsSectionView extends StatelessWidget {
           CarouselSlider.builder(
             itemCount: DataRepo.projects.length,
             itemBuilder: (BuildContext context, int itemIndex, int i) =>
-                CustomProjectCard(
-                  projectModel: DataRepo.projects[i],
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 25),
+                  child: CustomProjectCard(
+                    projectModel: DataRepo.projects[i],
+                  ),
                 ),
             options: CarouselOptions(
-              height: 300,
+              height: 350,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 5),
               enlargeCenterPage: true,

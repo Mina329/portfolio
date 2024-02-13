@@ -20,6 +20,10 @@ class CustomDrawer extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
+              child: SizedBox(
+            height: 50,
+          )),
+          const SliverToBoxAdapter(
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: MinaText(),
