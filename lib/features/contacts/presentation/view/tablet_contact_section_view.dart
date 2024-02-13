@@ -12,7 +12,7 @@ class TabletContactSectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       key: contactKey,
-      padding: const EdgeInsets.symmetric( vertical: 50),
+      padding: const EdgeInsets.symmetric(vertical: 50),
       child: Column(
         children: [
           const SectionTitleWidget(title: 'Connect with Me'),
@@ -22,14 +22,11 @@ class TabletContactSectionView extends StatelessWidget {
           CarouselSlider.builder(
             itemCount: DataRepo.contacts.length,
             itemBuilder: (BuildContext context, int itemIndex, int i) =>
-                Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
-              child: ContactCard(
-                contactModel: DataRepo.contacts[i],
-              ),
+                ContactCard(
+              contactModel: DataRepo.contacts[i],
             ),
             options: CarouselOptions(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: 300,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 5),
               enlargeCenterPage: true,

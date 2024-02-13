@@ -51,6 +51,7 @@ class _DesktopProjectsSectionViewState
                 });
               },
               style: ButtonStyle(
+                overlayColor: const MaterialStatePropertyAll(Colors.transparent),
                 shape: MaterialStatePropertyAll(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(3),

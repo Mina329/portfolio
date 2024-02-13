@@ -4,20 +4,22 @@ import 'package:portfolio/features/portfolio/presentation/view/widgets/desktop_n
 import 'package:portfolio/features/portfolio/presentation/view/widgets/myresume_desktop_button.dart';
 import 'package:portfolio/features/portfolio/presentation/view/widgets/theme_switch.dart';
 
-class DesktopNavigationBar extends StatelessWidget {
-  const DesktopNavigationBar({
-    super.key,
-    required this.aboutKey,
-    required this.homeKey,
-    required this.servicesKey,
-    required this.projectsKey,
-    required this.contactsKey,
-  });
+class CustomNavigationBar extends StatelessWidget
+    implements PreferredSizeWidget {
   final GlobalKey homeKey;
   final GlobalKey aboutKey;
   final GlobalKey servicesKey;
   final GlobalKey projectsKey;
   final GlobalKey contactsKey;
+
+  const CustomNavigationBar({
+    required this.homeKey,
+    required this.aboutKey,
+    required this.servicesKey,
+    required this.projectsKey,
+    required this.contactsKey,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,9 @@ class DesktopNavigationBar extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
 }
 
 void scrollToSection(GlobalKey key) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/utils/colors_manager.dart';
 import 'package:portfolio/core/utils/size_config.dart';
 import 'package:portfolio/core/utils/styles_manager.dart';
 import 'package:portfolio/core/widgets/adaptive_layout.dart';
@@ -23,38 +24,22 @@ class _PortfolioViewState extends State<PortfolioView> {
   final GlobalKey projectsSectionKey = GlobalKey();
   final GlobalKey contactSectionKey = GlobalKey();
   final ScrollController scrollController = ScrollController();
-  double savedScrollPosition = 0.0;
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController.addListener(_saveScrollPosition);
-  }
-
-  void _restoreScrollPosition() {
-    if (scrollController.hasClients) {
-      scrollController.jumpTo(savedScrollPosition);
-    }
-  }
-
-  void _saveScrollPosition() {
-    savedScrollPosition = scrollController.offset;
-  }
-
-  @override
-  void dispose() {
-    scrollController.removeListener(_saveScrollPosition);
-    scrollController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => _restoreScrollPosition());
-
     return Scaffold(
       key: scaffoldKey,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => scrollToSection(homeSectionKey),
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+            ? Colors.black
+            : Colors.white,
+        child: Icon(
+          Icons.arrow_drop_up_outlined,
+          color: ColorsManager.primaryColor,
+          size: MediaQuery.of(context).size.height * 0.05,
+        ),
+      ),
       appBar: MediaQuery.sizeOf(context).width < SizeConfig.desktop
           ? AppBar(
               elevation: 0,
@@ -75,7 +60,13 @@ class _PortfolioViewState extends State<PortfolioView> {
                   },
                   icon: const Icon(Icons.menu)),
             )
-          : null,
+          : CustomNavigationBar(
+              homeKey: homeSectionKey,
+              aboutKey: aboutSectionKey,
+              servicesKey: servicesSectionKey,
+              projectsKey: projectsSectionKey,
+              contactsKey: aboutSectionKey,
+            ),
       drawer: MediaQuery.sizeOf(context).width < SizeConfig.desktop
           ? CustomDrawer(
               functions: [
@@ -88,30 +79,30 @@ class _PortfolioViewState extends State<PortfolioView> {
               ],
             )
           : null,
-      body: AdaptiveLayout(
-        mobileLayout: (context) => PortfolioMobileLayout(
-          scrollController: scrollController,
-          homeSectionKey: homeSectionKey,
-          aboutSectionKey: aboutSectionKey,
-          contactSectionKey: contactSectionKey,
-          projectsSectionKey: projectsSectionKey,
-          servicesSectionKey: servicesSectionKey,
-        ),
-        tabletLayout: (context) => PortfolioTabletLayout(
-          scrollController: scrollController,
-          homeSectionKey: homeSectionKey,
-          aboutSectionKey: aboutSectionKey,
-          contactSectionKey: contactSectionKey,
-          projectsSectionKey: projectsSectionKey,
-          servicesSectionKey: servicesSectionKey,
-        ),
-        desktopLayout: (context) => PortfolioDesktopLayout(
-          scrollController: scrollController,
-          homeSectionKey: homeSectionKey,
-          aboutSectionKey: aboutSectionKey,
-          contactSectionKey: contactSectionKey,
-          projectsSectionKey: projectsSectionKey,
-          servicesSectionKey: servicesSectionKey,
+      body: SingleChildScrollView(
+        controller: scrollController,
+        child: AdaptiveLayout(
+          mobileLayout: (context) => PortfolioMobileLayout(
+            homeSectionKey: homeSectionKey,
+            aboutSectionKey: aboutSectionKey,
+            contactSectionKey: contactSectionKey,
+            projectsSectionKey: projectsSectionKey,
+            servicesSectionKey: servicesSectionKey,
+          ),
+          tabletLayout: (context) => PortfolioTabletLayout(
+            homeSectionKey: homeSectionKey,
+            aboutSectionKey: aboutSectionKey,
+            contactSectionKey: contactSectionKey,
+            projectsSectionKey: projectsSectionKey,
+            servicesSectionKey: servicesSectionKey,
+          ),
+          desktopLayout: (context) => PortfolioDesktopLayout(
+            homeSectionKey: homeSectionKey,
+            aboutSectionKey: aboutSectionKey,
+            contactSectionKey: contactSectionKey,
+            projectsSectionKey: projectsSectionKey,
+            servicesSectionKey: servicesSectionKey,
+          ),
         ),
       ),
     );

@@ -154,8 +154,8 @@ class Assets {
   static const String assetsImagesProjectsMediaHousePrice = "assets/images/projects_media/house_price.jpg";
 
   /// Assets for assetsImagesProjectsMediaHousePrice2
-  /// assets/images/projects_media/house_price_2.png
-  static const String assetsImagesProjectsMediaHousePrice2 = "assets/images/projects_media/house_price_2.png";
+  /// assets/images/projects_media/house_price_2.jpg
+  static const String assetsImagesProjectsMediaHousePrice2 = "assets/images/projects_media/house_price_2.jpg";
 
   /// Assets for assetsImagesProjectsMediaIris
   /// assets/images/projects_media/iris.jpg
@@ -386,7 +386,7 @@ class Assets {
   static const String assetsImagesProjectsMediaTitanic = "assets/images/projects_media/titanic.jpg";
 
   /// Assets for assetsImagesProjectsMediaXray
-  /// assets/images/projects_media/xray.jpeg
-  static const String assetsImagesProjectsMediaXray = "assets/images/projects_media/xray.jpeg";
+  /// assets/images/projects_media/xray.jpg
+  static const String assetsImagesProjectsMediaXray = "assets/images/projects_media/xray.jpg";
 }
 

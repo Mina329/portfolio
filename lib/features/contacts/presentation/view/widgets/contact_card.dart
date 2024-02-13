@@ -18,9 +18,20 @@ class ContactCard extends StatelessWidget {
         aspectRatio: 16 / 9,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 450, maxHeight: 300),
-          child: Card(
-            elevation: 20,
-            surfaceTintColor: Colors.transparent,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.grey[900]
+                  : Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha(100),
+                  blurRadius: 12.0,
+                  offset: const Offset(0.0, 0.0),
+                )
+              ],
+            ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(

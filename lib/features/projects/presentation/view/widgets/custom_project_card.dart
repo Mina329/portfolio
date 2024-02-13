@@ -20,7 +20,10 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       onTap: () => MediaQuery.of(context).size.width < SizeConfig.desktop
           ? Navigator.of(context).push(
               MaterialPageRoute(
@@ -38,9 +41,20 @@ class _CustomProjectCardState extends State<CustomProjectCard> {
             child: MouseRegion(
               onEnter: (_) => _setHover(true),
               onExit: (_) => _setHover(false),
-              child: Card(
-                elevation: 20,
-                surfaceTintColor: Colors.transparent,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.grey[900]
+                      : Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withAlpha(100),
+                      blurRadius: 12.0,
+                      offset: const Offset(0.0, 0.0),
+                    )
+                  ],
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Stack(

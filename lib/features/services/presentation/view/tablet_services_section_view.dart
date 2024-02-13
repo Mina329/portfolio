@@ -22,14 +22,11 @@ class TabletServicesSectionView extends StatelessWidget {
           CarouselSlider.builder(
             itemCount: DataRepo.services.length,
             itemBuilder: (BuildContext context, int itemIndex, int i) =>
-                Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
-              child: CustomFlipCard(
-                serviceModel: DataRepo.services[i],
-              ),
-            ),
+                CustomFlipCard(
+                  serviceModel: DataRepo.services[i],
+                ),
             options: CarouselOptions(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: 300,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 5),
               enlargeCenterPage: true,

@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: flutter pub get
     - name: Build
-      run: flutter build web
+      run: flutter build web --web-renderer canvaskit
     - name: Remove <base href="/"> tag from index.html
       run: sed -i '/<base href="\/">/d' build/web/index.html
     - name: Deploy to GitHub Pages

@@ -13,18 +13,15 @@ class CustomFlipCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxHeight: 300, maxWidth: 300),
-      child: AspectRatio(
-        aspectRatio: 1,
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 300, maxWidth: 300),
-          child: FlipCard(
-            fill: Fill.fillBack,
-            front: FrontFlipCard(serviceModel: serviceModel),
-            back: BackFlipCard(serviceModel: serviceModel),
-          ),
-        ),
+    return InkWell(
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      onTap: () {},
+      child: FlipCard(
+        fill: Fill.fillBack,
+        front: FrontFlipCard(serviceModel: serviceModel),
+        back: BackFlipCard(serviceModel: serviceModel),
       ),
     );
   }
