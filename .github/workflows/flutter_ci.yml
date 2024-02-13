@@ -3,43 +3,58 @@ name: CI/CD - Flutter App
 on:
   push:
     branches:
-      - master  # Or your default branch
-
+      - master # Or your default branch
 
 jobs:
   build-deploy-release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v1
-      with:
-        flutter-version: '3.16.9'
-        
-    - name: Install dependencies
-      run: flutter pub get
-      
-    # Build web app
-    - name: Build Web (Canvaskit Renderer)
-      run: flutter build web --web-renderer canvaskit
-    
-    # Build APK for Android
-    - name: Build APK
-      run: flutter build apk
-    
-    # Upload APK to GitHub Releases
-    - name: Upload APK to GitHub Releases
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          build/app/outputs/flutter-apk/app-release.apk
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
 
-    # Deploy to GitHub Pages
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/web
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "3.16.9"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Build web app
+      - name: Build Web (Canvaskit Renderer)
+        run: flutter build web --web-renderer canvaskit
+      
+      # Modify index.html
+      - name: Remove base href from index.html
+        run: sed -i '/<base href="\/">/d' build/web/index.html
+        
+      # Build APK for Android
+      - name: Build APK
+        run: flutter build apk
+
+      # Create and Push a New Tag
+      - name: Create and Push Tag
+        id: tag_version
+        run: |
+          GIT_TAG=$(date +v%Y.%m.%d.%H%M%S)
+          echo "Creating and pushing tag ${GIT_TAG}"
+          git tag $GIT_TAG
+          git push origin $GIT_TAG
+          echo "::set-output name=tag::$GIT_TAG"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Upload APK to GitHub Releases
+      - name: Upload APK to GitHub Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/app/outputs/flutter-apk/app-release.apk
+          tag_name: ${{ steps.tag_version.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
