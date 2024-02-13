@@ -1,0 +1,65 @@
+name: CI/CD - Flutter App
+
+on:
+  push:
+    branches:
+      - master  # Or your default branch
+  pull_request:
+    branches:
+      - main  # Or your main branch
+
+jobs:
+  build-deploy-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '3.16.9'
+        
+    - name: Install dependencies
+      run: flutter pub get
+      
+    # Build web app
+    - name: Build Web (Canvaskit Renderer)
+      run: flutter build web --web-renderer canvaskit
+    
+    # Build APK for Android
+    - name: Build APK
+      run: flutter build apk
+    
+    # Build EXE for Windows
+    - name: Build Windows EXE
+      run: flutter build windows
+    
+    # Upload Artifacts to GitHub Releases
+    - name: Upload Artifacts to GitHub Releases
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          build/app/outputs/flutter-apk/app-release.apk
+          build/windows/runner/Release/*.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build_and_preview:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node.js (if needed)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Or the version you need
+        if: steps.build-web.outputs.needs-node == 'true'
+      - run: npm ci  # Or similar command to install project dependencies
+      - run: npm build  # Or the command to build your frontend assets
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MINA_PORTFOLIO_FC5FE }}'
+          projectId: mina-portfolio-fc5fe
+          channelId: live  # Or 'preview' for preview deployments
+          ignore: 'build/**'  # Exclude unnecessary files from preview deployments

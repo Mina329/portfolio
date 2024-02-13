@@ -1,148 +1,171 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/core/utils/size_config.dart';
 
 abstract class StylesManager {
   static TextStyle styleMedium18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w500,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w500,
             );
   static TextStyle styleMedium15(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 15),
               fontWeight: FontWeight.w500,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 15),
               fontWeight: FontWeight.w500,
             );
   static TextStyle styleExtraLight18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w200,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w200,
             );
   static TextStyle styleExtraLight30(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 30),
               fontWeight: FontWeight.w200,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 30),
               fontWeight: FontWeight.w200,
             );
   static TextStyle styleExtraLight60(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 60),
               fontWeight: FontWeight.w200,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 60),
               fontWeight: FontWeight.w200,
             );
   static TextStyle styleLight20(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 20),
               fontWeight: FontWeight.w300,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 20),
               fontWeight: FontWeight.w300,
             );
   static TextStyle styleMedium25(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 25),
               fontWeight: FontWeight.w500,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 25),
               fontWeight: FontWeight.w500,
             );
   static TextStyle styleSemiBold25(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 25),
               fontWeight: FontWeight.w600,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 25),
               fontWeight: FontWeight.w600,
             );
   static TextStyle styleBold100(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 100),
               fontWeight: FontWeight.w700,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 100),
               fontWeight: FontWeight.w700,
             );
   static TextStyle styleSemiBold15(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 15),
               fontWeight: FontWeight.w800,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 15),
               fontWeight: FontWeight.w800,
             );
   static TextStyle styleSemiBold18(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.poppins(
+          ? TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w800,
             )
-          : GoogleFonts.poppins(
+          : TextStyle(
+              fontFamily: 'Poppins',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 18),
               fontWeight: FontWeight.w800,
             );
   static TextStyle styleDancingScript(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
-          ? GoogleFonts.dancingScript(
+          ? TextStyle(
+              fontFamily: 'DancingScript',
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, fontSize: 40),
               fontWeight: FontWeight.w900,
             )
-          : GoogleFonts.dancingScript(
+          : TextStyle(
+              fontFamily: 'DancingScript',
               color: Colors.black,
               fontSize: getResponsiveFontSize(context, fontSize: 40),
               fontWeight: FontWeight.w900,
