@@ -19,6 +19,10 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # Add icons launcher
+      - name: Generate App Icons
+        run: dart run flutter_launcher_icons:main
+
       # Build web app
       - name: Build Web (Canvaskit Renderer)
         run: flutter build web --web-renderer canvaskit
