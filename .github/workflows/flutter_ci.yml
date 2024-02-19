@@ -26,31 +26,6 @@ jobs:
       # Modify index.html
       - name: Remove base href from index.html
         run: sed -i '/<base href="\/">/d' build/web/index.html
-        
-      # Build APK for Android
-      - name: Build APK
-        run: flutter build apk
-
-      # Create and Push a New Tag
-      - name: Create and Push Tag
-        id: tag_version
-        run: |
-          GIT_TAG=$(date +v%Y.%m.%d.%H%M%S)
-          echo "Creating and pushing tag ${GIT_TAG}"
-          git tag $GIT_TAG
-          git push origin $GIT_TAG
-          echo "::set-output name=tag::$GIT_TAG"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Upload APK to GitHub Releases
-      - name: Upload APK to GitHub Releases
-        uses: softprops/action-gh-release@v1
-        with:
-          files: build/app/outputs/flutter-apk/app-release.apk
-          tag_name: ${{ steps.tag_version.outputs.tag }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
