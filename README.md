@@ -12,6 +12,7 @@
 
 - [Introduction 🏛️](#introduction-🏛️)
 - [Links 🚀](#links-🚀)
+- [Demo 🎬](#demo-🎬)
 - [Features 🌟](#features-🌟)
 - [Screenshots 📸](#screenshots-📸)
 - [Packages Used 📚](#packages-used-📚)
@@ -33,7 +34,18 @@ Welcome to Mina Portfolio, a cross-platform, open-source project designed to sho
 
 🌐 Web App: https://mina329.github.io/portfolio/
 
-📱 Android App: https://github.com/Mina329/portfolio/releases/tag/v2024.02.13.231416
+📱 Android App: https://play.google.com/store/apps/details?id=com.mina329.portfolio
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="-----------------------------------------------------" style="width: 100%; height: auto;">
+</p>
+
+## Demo 🎬
+
+
+
+https://github.com/Mina329/portfolio/assets/96777964/58cf030a-2580-490a-9f09-531f8ffae5e2
+
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="-----------------------------------------------------" style="width: 100%; height: auto;">
