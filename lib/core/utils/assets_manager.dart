@@ -5,6 +5,38 @@ class Assets {
   /// assets/animation/wave.gif
   static const String assetsAnimationWave = "assets/animation/wave.gif";
 
+  /// Assets for assetsFontsDancingScriptBold
+  /// assets/fonts/DancingScript-Bold.ttf
+  static const String assetsFontsDancingScriptBold = "assets/fonts/DancingScript-Bold.ttf";
+
+  /// Assets for assetsFontsPoppinsBlack
+  /// assets/fonts/Poppins-Black.ttf
+  static const String assetsFontsPoppinsBlack = "assets/fonts/Poppins-Black.ttf";
+
+  /// Assets for assetsFontsPoppinsBold
+  /// assets/fonts/Poppins-Bold.ttf
+  static const String assetsFontsPoppinsBold = "assets/fonts/Poppins-Bold.ttf";
+
+  /// Assets for assetsFontsPoppinsExtraBold
+  /// assets/fonts/Poppins-ExtraBold.ttf
+  static const String assetsFontsPoppinsExtraBold = "assets/fonts/Poppins-ExtraBold.ttf";
+
+  /// Assets for assetsFontsPoppinsExtraLight
+  /// assets/fonts/Poppins-ExtraLight.ttf
+  static const String assetsFontsPoppinsExtraLight = "assets/fonts/Poppins-ExtraLight.ttf";
+
+  /// Assets for assetsFontsPoppinsLight
+  /// assets/fonts/Poppins-Light.ttf
+  static const String assetsFontsPoppinsLight = "assets/fonts/Poppins-Light.ttf";
+
+  /// Assets for assetsFontsPoppinsMedium
+  /// assets/fonts/Poppins-Medium.ttf
+  static const String assetsFontsPoppinsMedium = "assets/fonts/Poppins-Medium.ttf";
+
+  /// Assets for assetsFontsPoppinsSemiBold
+  /// assets/fonts/Poppins-SemiBold.ttf
+  static const String assetsFontsPoppinsSemiBold = "assets/fonts/Poppins-SemiBold.ttf";
+
   /// Assets for assetsImagesAi
   /// assets/images/ai.svg
   static const String assetsImagesAi = "assets/images/ai.svg";
@@ -28,6 +60,14 @@ class Assets {
   /// Assets for assetsImagesDataAnalysis
   /// assets/images/data_analysis.svg
   static const String assetsImagesDataAnalysis = "assets/images/data_analysis.svg";
+
+  /// Assets for assetsImagesFeature1
+  /// assets/images/feature1.png
+  static const String assetsImagesFeature1 = "assets/images/feature1.png";
+
+  /// Assets for assetsImagesFeature2
+  /// assets/images/feature2.png
+  static const String assetsImagesFeature2 = "assets/images/feature2.png";
 
   /// Assets for assetsImagesLogo
   /// assets/images/logo.png
@@ -288,6 +328,114 @@ class Assets {
   /// Assets for assetsImagesProjectsMediaShopping
   /// assets/images/projects_media/shopping.png
   static const String assetsImagesProjectsMediaShopping = "assets/images/projects_media/shopping.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkBanner
+  /// assets/images/projects_media/spark_banner.png
+  static const String assetsImagesProjectsMediaSparkBanner = "assets/images/projects_media/spark_banner.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkForgetPassword
+  /// assets/images/projects_media/spark/forget_password.png
+  static const String assetsImagesProjectsMediaSparkForgetPassword = "assets/images/projects_media/spark/forget_password.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkHome1
+  /// assets/images/projects_media/spark/home1.png
+  static const String assetsImagesProjectsMediaSparkHome1 = "assets/images/projects_media/spark/home1.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkHome2
+  /// assets/images/projects_media/spark/home2.png
+  static const String assetsImagesProjectsMediaSparkHome2 = "assets/images/projects_media/spark/home2.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkHome3
+  /// assets/images/projects_media/spark/home3.png
+  static const String assetsImagesProjectsMediaSparkHome3 = "assets/images/projects_media/spark/home3.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkImages
+  /// assets/images/projects_media/spark/images.png
+  static const String assetsImagesProjectsMediaSparkImages = "assets/images/projects_media/spark/images.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkImproveYourFeed
+  /// assets/images/projects_media/spark/improve_your_feed.png
+  static const String assetsImagesProjectsMediaSparkImproveYourFeed = "assets/images/projects_media/spark/improve_your_feed.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkLists
+  /// assets/images/projects_media/spark/lists.png
+  static const String assetsImagesProjectsMediaSparkLists = "assets/images/projects_media/spark/lists.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkLogin
+  /// assets/images/projects_media/spark/login.png
+  static const String assetsImagesProjectsMediaSparkLogin = "assets/images/projects_media/spark/login.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkLogo
+  /// assets/images/projects_media/spark_logo.png
+  static const String assetsImagesProjectsMediaSparkLogo = "assets/images/projects_media/spark_logo.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkMovie
+  /// assets/images/projects_media/spark/movie.png
+  static const String assetsImagesProjectsMediaSparkMovie = "assets/images/projects_media/spark/movie.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkMovieDetails
+  /// assets/images/projects_media/spark/movie_details.png
+  static const String assetsImagesProjectsMediaSparkMovieDetails = "assets/images/projects_media/spark/movie_details.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkMovieOverview
+  /// assets/images/projects_media/spark/movie_overview.png
+  static const String assetsImagesProjectsMediaSparkMovieOverview = "assets/images/projects_media/spark/movie_overview.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkOnboarding1
+  /// assets/images/projects_media/spark/onboarding1.png
+  static const String assetsImagesProjectsMediaSparkOnboarding1 = "assets/images/projects_media/spark/onboarding1.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkOnboarding2
+  /// assets/images/projects_media/spark/onboarding2.png
+  static const String assetsImagesProjectsMediaSparkOnboarding2 = "assets/images/projects_media/spark/onboarding2.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkOnboarding3
+  /// assets/images/projects_media/spark/onboarding3.png
+  static const String assetsImagesProjectsMediaSparkOnboarding3 = "assets/images/projects_media/spark/onboarding3.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkProfile
+  /// assets/images/projects_media/spark/profile.png
+  static const String assetsImagesProjectsMediaSparkProfile = "assets/images/projects_media/spark/profile.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkRegister
+  /// assets/images/projects_media/spark/register.png
+  static const String assetsImagesProjectsMediaSparkRegister = "assets/images/projects_media/spark/register.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkReviews
+  /// assets/images/projects_media/spark/reviews.png
+  static const String assetsImagesProjectsMediaSparkReviews = "assets/images/projects_media/spark/reviews.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkSearch
+  /// assets/images/projects_media/spark/search.png
+  static const String assetsImagesProjectsMediaSparkSearch = "assets/images/projects_media/spark/search.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkSearchDefault
+  /// assets/images/projects_media/spark/search_default.png
+  static const String assetsImagesProjectsMediaSparkSearchDefault = "assets/images/projects_media/spark/search_default.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkSection
+  /// assets/images/projects_media/spark/section.png
+  static const String assetsImagesProjectsMediaSparkSection = "assets/images/projects_media/spark/section.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkSetting
+  /// assets/images/projects_media/spark/setting.png
+  static const String assetsImagesProjectsMediaSparkSetting = "assets/images/projects_media/spark/setting.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkSplash
+  /// assets/images/projects_media/spark/splash.png
+  static const String assetsImagesProjectsMediaSparkSplash = "assets/images/projects_media/spark/splash.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkTv
+  /// assets/images/projects_media/spark/tv.png
+  static const String assetsImagesProjectsMediaSparkTv = "assets/images/projects_media/spark/tv.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkTvDetails
+  /// assets/images/projects_media/spark/tv_details.png
+  static const String assetsImagesProjectsMediaSparkTvDetails = "assets/images/projects_media/spark/tv_details.png";
+
+  /// Assets for assetsImagesProjectsMediaSparkTvOverview
+  /// assets/images/projects_media/spark/tv_overview.png
+  static const String assetsImagesProjectsMediaSparkTvOverview = "assets/images/projects_media/spark/tv_overview.png";
 
   /// Assets for assetsImagesProjectsMediaSuperstore
   /// assets/images/projects_media/superstore.jpg

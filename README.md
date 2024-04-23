@@ -3,7 +3,7 @@
   <h1>Mina Portfolio</h1>
 </div>
 <img width="100%" src="assets\images\feature1.png" alt="Application Image 10">
-<img width="100%" src="assets\images\feature 2.png" alt="Application Image 10">
+<img width="100%" src="assets\images\feature2.png" alt="Application Image 10">
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="-----------------------------------------------------" style="width: 100%; height: auto;">
 </p>

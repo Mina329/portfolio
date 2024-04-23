@@ -12,16 +12,12 @@ abstract class DataRepo {
     ServiceModel(
       serviceIcon: Assets.assetsImagesMobile,
       serviceTitle: 'Mobile App\nDevelopment',
-      services: [
-        'Flutter-based mobile app development.'
-      ],
+      services: ['Flutter-based mobile app development.'],
     ),
     ServiceModel(
       serviceIcon: Assets.assetsImagesComputer,
       serviceTitle: 'Desktop App\nDevelopment',
-      services: [
-        'Flutter-powered desktop app development.'
-      ],
+      services: ['Flutter-powered desktop app development.'],
     ),
     ServiceModel(
       serviceIcon: Assets.assetsImagesDataAnalysis,
@@ -37,6 +33,67 @@ abstract class DataRepo {
     ),
   ];
   static List<ProjectModel> projects = [
+    ProjectModel(
+      features: [
+        '14+ Screens',
+        'Responsive UI',
+        'GetX',
+        'Clean Architecture',
+        'MVC design pattern',
+        'Error Handling',
+        'TMDB API Integration',
+        'Light & Dark Theme',
+        'WebView',
+        'Firebase Auth',
+        'Firebase Firestore',
+        'VidSrc API',
+        'Pagination',
+      ],
+      links: [
+        LinksModel(
+          link: 'https://www.youtube.com/watch?v=qhEpL7Bwe-w',
+          text: 'Watch Video',
+          iconData: FontAwesomeIcons.youtube,
+        ),
+        LinksModel(
+          link: 'https://github.com/Mina329/spark',
+          text: 'Github',
+          iconData: FontAwesomeIcons.github,
+        ),
+      ],
+      media: [
+        Assets.assetsImagesProjectsMediaSparkBanner,
+        Assets.assetsImagesProjectsMediaSparkSplash,
+        Assets.assetsImagesProjectsMediaSparkOnboarding1,
+        Assets.assetsImagesProjectsMediaSparkOnboarding2,
+        Assets.assetsImagesProjectsMediaSparkOnboarding3,
+        Assets.assetsImagesProjectsMediaSparkLogin,
+        Assets.assetsImagesProjectsMediaSparkRegister,
+        Assets.assetsImagesProjectsMediaSparkForgetPassword,
+        Assets.assetsImagesProjectsMediaSparkImproveYourFeed,
+        Assets.assetsImagesProjectsMediaSparkHome1,
+        Assets.assetsImagesProjectsMediaSparkHome2,
+        Assets.assetsImagesProjectsMediaSparkHome3,
+        Assets.assetsImagesProjectsMediaSparkSection,
+        Assets.assetsImagesProjectsMediaSparkTv,
+        Assets.assetsImagesProjectsMediaSparkTvOverview,
+        Assets.assetsImagesProjectsMediaSparkTvDetails,
+        Assets.assetsImagesProjectsMediaSparkReviews,
+        Assets.assetsImagesProjectsMediaSparkMovie,
+        Assets.assetsImagesProjectsMediaSparkMovieOverview,
+        Assets.assetsImagesProjectsMediaSparkMovieDetails,
+        Assets.assetsImagesProjectsMediaSparkImages,
+        Assets.assetsImagesProjectsMediaSparkLists,
+        Assets.assetsImagesProjectsMediaSparkSearchDefault,
+        Assets.assetsImagesProjectsMediaSparkSearch,
+        Assets.assetsImagesProjectsMediaSparkProfile,
+        Assets.assetsImagesProjectsMediaSparkSetting,
+      ],
+      name: 'Spark',
+      banner: Assets.assetsImagesProjectsMediaSparkBanner,
+      icon: Assets.assetsImagesProjectsMediaSparkLogo,
+      description: 'Spark - An IMDB redesign with the ability to display shows',
+    ),
     ProjectModel(
       banner: Assets.assetsImagesProjectsMediaTamamBanner,
       icon: Assets.assetsImagesProjectsMediaTamamLogo,
@@ -85,8 +142,8 @@ abstract class DataRepo {
         ),
       ],
       features: [
-        '11+ Screens'
-            'Responsive UI',
+        '11+ Screens',
+        'Responsive UI',
         'Bloc and Cubit State Management',
         'Clean Architecture',
         'Localization (7 languages)',
